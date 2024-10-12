@@ -1,13 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Custom CSS for horizontal scrolling text */
+.text-scroll {
+  width: 100%; /* Full width of the container */
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide the overflowing text */
+  position: relative;
+}
+
+.text-scroll p {
+  display: inline-block;
+  animation: scrollX 30s linear infinite; /* Animation that scrolls horizontally */
+}
+
+/* Keyframes for horizontal scrolling */
+@keyframes scrollX {
+  0% {
+    transform: translateX(150%); /* Start off-screen to the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End off-screen to the left */
+  }
 }
